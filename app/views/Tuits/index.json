@@ -1,0 +1,12 @@
+{
+	"total" : ${tuits.size()}
+	"tuits" : [
+		#{list items:tuits, as:'t'}
+		{
+			"id" : ${t.id},
+			"fecha" : "${t.fecha}"
+			"texto" : "${t.texto}"
+		}${t_isLast ? '' : ','}
+		#{/list}
+	]
+} 

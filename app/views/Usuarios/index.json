@@ -1,0 +1,11 @@
+{
+	"total" : ${usuarios.size()}
+	"usuarios" : [
+		#{list items:usuarios, as:'usu'}
+		{
+			"id" : ${usu.id},
+			"nick" : "${usu.nick}"
+		}${usu_isLast ? '' : ','}
+		#{/list}
+	]
+} 

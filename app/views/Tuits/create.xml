@@ -1,0 +1,5 @@
+<usuario>
+	<id>${tuit.id}</id>
+	<fecha>${tuit.fecha}</fecha>
+	<texto><![CDATA[${tuit.texto}]]></texto>
+</usuario>

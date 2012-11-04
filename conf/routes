@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+
+GET      /usuario/todos               Usuarios.index
+GET      /usuario/{id}                Usuarios.atributos
+PUT      /usuario/{id}                Usuarios.update
+DELETE   /usuario/{id}                Usuarios.delete
+POST     /usuario                     Usuarios.create
+
+
+GET      /usuario/{uid}/tuit/todos    Tuits.index
+GET      /usuario/{uid}/tuit/{tid}    Tuits.atributos
+PUT      /usuario/{uid}/tuit/{tid}    Tuits.update
+DELETE   /usuario/{uid}/tuit/{tid}    Tuits.delete
+POST     /usuario/{uid}/tuit          Tuits.create
+

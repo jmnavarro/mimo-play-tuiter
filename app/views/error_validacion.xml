@@ -1,0 +1,11 @@
+<error>
+	<total_errores>${errors.size()}</total_errores>
+	<errores>
+		#{list items:errors, as:'e'}
+		<error>
+			<atributo>${e.getKey()}</atributo>
+			<mensaje>${e.message()}</mensaje>
+		</error>
+		#{/list}
+	</errores>
+</error>

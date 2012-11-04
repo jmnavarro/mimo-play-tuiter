@@ -1,0 +1,4 @@
+<usuario>
+	<id>${usuario.id}</id>
+	<nick>${usuario.nick}</nick>
+</usuario>

@@ -1,0 +1,11 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Usuario(u1):
+   nick:   fixture-nick1
+
+
+Tuit(t1):
+   autor:  u1
+   texto:  fixture-texto1
+   fecha:  2001-05-19

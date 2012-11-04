@@ -1,0 +1,10 @@
+<tuits>
+	<total>${tuits.size()}</total>
+	#{list items:tuits, as:'t'}
+	<tuit>
+		<id>${t.id}</id>
+		<fecha>${t.fecha}</fecha>
+		<texto><![CDATA[${t.texto}]]></texto>
+	</tuit>
+	#{/list}
+</tuits>

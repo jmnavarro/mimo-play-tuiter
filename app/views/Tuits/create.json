@@ -1,0 +1,5 @@
+{
+	"id" : ${tuit.id},
+	"fecha" : "${tuit.fecha}"
+	"texto" : "${tuit.texto}"
+} 

@@ -1,0 +1,9 @@
+<usuarios>
+	<total>${usuarios.size()}</total>
+	#{list items:usuarios, as:'usu'}
+	<usuario>
+		<id>${usu.id}</id>
+		<nick>${usu.nick}</nick>
+	</usuario>
+	#{/list}
+</usuarios>

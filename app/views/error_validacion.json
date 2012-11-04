@@ -1,0 +1,11 @@
+{
+	"total_errores" : ${errors.size()}
+	"errores" : [
+		#{list items:errors, as:'e'}
+		{
+			"atributo" : "${e.getKey()}",
+			"mensaje" : "${e.message()}"
+		}${e_isLast ? '' : ','}
+		#{/list}
+	]
+} 
