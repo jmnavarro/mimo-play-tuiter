@@ -1,7 +1,10 @@
 package tuit;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import models.Categoria;
 import models.Tuit;
 import models.Usuario;
 import play.data.validation.Validation;
@@ -61,5 +64,25 @@ public class TuitTest extends UnitTest {
 		assertNotNull(t.fecha);
 	}
 
+	@Test
+	public void laRelacionDebeSerCorrecta() {
+		Usuario u = Usuario.all().first();
+
+		List<Categoria> l = Categoria.all().fetch();
+		for (Categoria c : l) {
+			System.out.println(c);
+			assertTrue(c.tuits.size() > 0);
+		}
+
+		List<Tuit> ll = Tuit.all().fetch();
+		for (Tuit t : ll) {
+			System.out.println(t);
+			assertTrue(t.categorias.size() > 0);
+		}
+		
+		assertEquals(2, Tuit.count());
+		assertEquals(3, Categoria.count());
+		assertEquals(2, u.tuits.size());
+	}
 
 }

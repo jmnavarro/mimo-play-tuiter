@@ -1,10 +1,14 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
@@ -30,6 +34,10 @@ public class Tuit extends Model {
 	@ManyToOne
 	public Usuario autor;
 	
+	@Required
+	@ManyToMany(cascade = CascadeType.ALL)
+	public List<Categoria> categorias = new ArrayList<Categoria>();
+	
 	/**
 	 * Rellena la fecha con la fecha actual
 	 */
@@ -46,6 +54,11 @@ public class Tuit extends Model {
 	 */
 	public void setTexto(String texto) {
 		this.texto = (texto == null) ? null : texto.trim();
+	}
+	
+	@Override
+	public String toString() {
+		return "texto=" + texto + " fecha=" + fecha + " autor=" + autor + " categorias=" + categorias.size();
 	}
 
 }

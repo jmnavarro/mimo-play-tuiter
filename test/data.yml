@@ -1,11 +1,24 @@
-# you describe your data using the YAML notation here
-# and then load them using Fixtures.load("data.yml")
+Categoria(c1):
+   nombre: categoria1
+   
+Categoria(c2):
+   nombre: categoria2
+   
+Categoria(c3):
+   nombre: categoria3
 
 Usuario(u1):
    nick:   fixture-nick1
-
 
 Tuit(t1):
    autor:  u1
    texto:  fixture-texto1
    fecha:  2001-05-19
+   categorias: [c1, c2]
+
+Tuit(t2):
+   autor:  u1
+   texto:  fixture-texto2
+   fecha:  2004-06-19
+   categorias: [c2, c3]
+   
